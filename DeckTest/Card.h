@@ -10,7 +10,34 @@
 @class Deck;
 @class Exercise;
 
+
+//nick begin
+typedef enum {
+	Hearts,
+	Diamonds,
+	Spades,
+	Clubs
+} Suit;
+
+#define Ace   1
+#define Jack  11
+#define Queen 12
+#define King  13
+//end nick
+
 @interface Card : PFObject<PFSubclassing>
+
+//nick begin
+{
+NSInteger value;
+Suit cardSuit;
+}
+
+@property (nonatomic) NSInteger value;
+@property (nonatomic) Suit cardSuit;
+- (id) initWithValue:(NSInteger) aValue suit:(Suit) aSuit;
+//end nick
+
 
 @property (retain) NSString *suit;
 @property (retain) NSString *faceValue;
@@ -22,3 +49,4 @@
 + (NSString *)parseClassName;
 
 @end
+
