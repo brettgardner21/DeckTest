@@ -78,7 +78,7 @@
 - (void)addCard:(Card *)card
 {
     //Make a frame for view to be loaded in
-    CGRect frame = CGRectMake(0, 0, 240, 340);
+    CGRect frame = CGRectMake(0, 0, 240, 300);
     //Initialize subview
     subView = [[UIView alloc] initWithFrame:frame];
     

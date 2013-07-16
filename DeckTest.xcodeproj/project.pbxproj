@@ -11,6 +11,8 @@
 		3F26D6CF17666E4E00215930 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F26D6CE17666E4E00215930 /* HelpViewController.m */; };
 		3F26D6D217666E5E00215930 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F26D6D117666E5E00215930 /* SettingsViewController.m */; };
 		3F26D6D81766721200215930 /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F26D6D71766721200215930 /* card.png */; };
+		3F3EE0FB1794D36800A2D55B /* Design.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE0FA1794D36800A2D55B /* Design.rtf */; };
+		3F3EE1001794E4EB00A2D55B /* TestSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE0FF1794E4EB00A2D55B /* TestSelectionViewController.m */; };
 		EA34112A16ECDB0A00AE1196 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112916ECDB0A00AE1196 /* UIKit.framework */; };
 		EA34112C16ECDB0A00AE1196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112B16ECDB0A00AE1196 /* Foundation.framework */; };
 		EA34112E16ECDB0A00AE1196 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112D16ECDB0A00AE1196 /* CoreGraphics.framework */; };
@@ -48,6 +50,9 @@
 		3F26D6D017666E5E00215930 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3F26D6D117666E5E00215930 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3F26D6D71766721200215930 /* card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card.png; sourceTree = "<group>"; };
+		3F3EE0FA1794D36800A2D55B /* Design.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Design.rtf; sourceTree = "<group>"; };
+		3F3EE0FE1794E4EB00A2D55B /* TestSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSelectionViewController.h; sourceTree = "<group>"; };
+		3F3EE0FF1794E4EB00A2D55B /* TestSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSelectionViewController.m; sourceTree = "<group>"; };
 		EA34112516ECDB0A00AE1196 /* DeckTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA34112916ECDB0A00AE1196 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EA34112B16ECDB0A00AE1196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,18 +117,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F3EE0FC1794D88900A2D55B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				EA34113816ECDB0A00AE1196 /* DeckTestAppDelegate.h */,
+				EA34113916ECDB0A00AE1196 /* DeckTestAppDelegate.m */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		3F3EE0FD1794D89700A2D55B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F26D6D017666E5E00215930 /* SettingsViewController.h */,
+				3F26D6D117666E5E00215930 /* SettingsViewController.m */,
+				3F26D6CD17666E4E00215930 /* HelpViewController.h */,
+				3F26D6CE17666E4E00215930 /* HelpViewController.m */,
+				3F26D6CA176666EA00215930 /* OfflineDeckTestViewController.h */,
+				3F26D6CB176666EA00215930 /* OfflineDeckTestViewController.m */,
+				EA34114416ECDB0A00AE1196 /* DeckTestViewController.h */,
+				EA34114516ECDB0A00AE1196 /* DeckTestViewController.m */,
+				3F3EE0FE1794E4EB00A2D55B /* TestSelectionViewController.h */,
+				3F3EE0FF1794E4EB00A2D55B /* TestSelectionViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		EA34111A16ECDB0A00AE1196 = {
 			isa = PBXGroup;
 			children = (
-				EAF98AD5172856DA008936B7 /* SystemConfiguration.framework */,
-				EAF98AD3172856CD008936B7 /* StoreKit.framework */,
-				EAF98AD1172856C7008936B7 /* Security.framework */,
-				EAF98ACF172856BD008936B7 /* QuartzCore.framework */,
-				EAF98ACD172856B2008936B7 /* MobileCoreServices.framework */,
-				EAF98ACB172856A8008936B7 /* libz.1.1.3.dylib */,
-				EAF98AC917285699008936B7 /* CoreLocation.framework */,
-				EAF98AC71728568A008936B7 /* CFNetwork.framework */,
-				EAF98AC51728567D008936B7 /* AudioToolbox.framework */,
 				EA34112F16ECDB0A00AE1196 /* DeckTest */,
 				EA34112816ECDB0A00AE1196 /* Frameworks */,
 				EA34112616ECDB0A00AE1196 /* Products */,
@@ -141,6 +163,15 @@
 		EA34112816ECDB0A00AE1196 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAF98AD5172856DA008936B7 /* SystemConfiguration.framework */,
+				EAF98AD3172856CD008936B7 /* StoreKit.framework */,
+				EAF98AD1172856C7008936B7 /* Security.framework */,
+				EAF98ACF172856BD008936B7 /* QuartzCore.framework */,
+				EAF98ACD172856B2008936B7 /* MobileCoreServices.framework */,
+				EAF98ACB172856A8008936B7 /* libz.1.1.3.dylib */,
+				EAF98AC917285699008936B7 /* CoreLocation.framework */,
+				EAF98AC71728568A008936B7 /* CFNetwork.framework */,
+				EAF98AC51728567D008936B7 /* AudioToolbox.framework */,
 				EAF98AC317285614008936B7 /* Parse.framework */,
 				EA34112916ECDB0A00AE1196 /* UIKit.framework */,
 				EA34112B16ECDB0A00AE1196 /* Foundation.framework */,
@@ -152,18 +183,11 @@
 		EA34112F16ECDB0A00AE1196 /* DeckTest */ = {
 			isa = PBXGroup;
 			children = (
-				EAF98AD7172859DE008936B7 /* Models */,
-				EA34113816ECDB0A00AE1196 /* DeckTestAppDelegate.h */,
-				EA34113916ECDB0A00AE1196 /* DeckTestAppDelegate.m */,
+				3F3EE0FA1794D36800A2D55B /* Design.rtf */,
 				EA34114116ECDB0A00AE1196 /* MainStoryboard.storyboard */,
-				3F26D6D017666E5E00215930 /* SettingsViewController.h */,
-				3F26D6D117666E5E00215930 /* SettingsViewController.m */,
-				3F26D6CD17666E4E00215930 /* HelpViewController.h */,
-				3F26D6CE17666E4E00215930 /* HelpViewController.m */,
-				3F26D6CA176666EA00215930 /* OfflineDeckTestViewController.h */,
-				3F26D6CB176666EA00215930 /* OfflineDeckTestViewController.m */,
-				EA34114416ECDB0A00AE1196 /* DeckTestViewController.h */,
-				EA34114516ECDB0A00AE1196 /* DeckTestViewController.m */,
+				3F3EE0FC1794D88900A2D55B /* App */,
+				EAF98AD7172859DE008936B7 /* Models */,
+				3F3EE0FD1794D89700A2D55B /* ViewControllers */,
 				EA34113016ECDB0A00AE1196 /* Supporting Files */,
 			);
 			path = DeckTest;
@@ -261,6 +285,7 @@
 				EA34114016ECDB0A00AE1196 /* Default-568h@2x.png in Resources */,
 				EA34114316ECDB0A00AE1196 /* MainStoryboard.storyboard in Resources */,
 				3F26D6D81766721200215930 /* card.png in Resources */,
+				3F3EE0FB1794D36800A2D55B /* Design.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +308,7 @@
 				3F26D6CC176666EA00215930 /* OfflineDeckTestViewController.m in Sources */,
 				3F26D6CF17666E4E00215930 /* HelpViewController.m in Sources */,
 				3F26D6D217666E5E00215930 /* SettingsViewController.m in Sources */,
+				3F3EE1001794E4EB00A2D55B /* TestSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

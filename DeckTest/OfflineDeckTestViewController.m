@@ -20,6 +20,7 @@
 @property Deck *d;
 @property float currentProgress;
 @property int cardCount;
+@property BOOL workoutHasBegun;
 @end
 
 @implementation OfflineDeckTestViewController
@@ -27,11 +28,13 @@
 @synthesize d;
 @synthesize currentProgress, cardCount;
 
+#pragma mark Init
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        //not called when using storyboard.
     }
     return self;
 }
@@ -40,29 +43,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.workoutHasBegun = NO;
     
     //setup
     //generate workout based on Deck selection. We can use segues for this.
     //How should the workout persist? Save the workout object to disk here.
-        //How many should be saveable?
+    //How many should be saveable?
+    //We'll need to keep a persistent dictionary of each deck object generated or just the last if not completed?
+
     self.d = [[Deck alloc] init];
-	NSLog(@"%@",d);
-    
 	[d shuffle];
 	NSLog(@"%@",d);
-    /*
-	NSLog(@"Drew Card: %@",[d draw]);
-	NSLog(@"Drew Card: %@",[d draw]);
-	NSLog(@"Drew Card: %@",[d draw]);
-	NSLog(@"Drew Card: %@",[d draw]);
-    
-	NSLog(@"%@",d);
-    */
     
     self.currentProgress = 0;
     self.progressBar.progress = 0;
     self.cardCount = 0;
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,11 +95,122 @@
     cardCount = cardCount + 1;
     self.progressLabel.text = [NSString stringWithFormat:@"%d/52",cardCount];
     NSLog(@"%d",cardCount);
+    
+    //faux achievement
+    if (cardCount == 5 || cardCount == 10 || cardCount == 15 || cardCount == 20) {
+        //achievement alert
+        [self achievementAlert];
+    }
+}
+
+#pragma mark Achievement Handling
+-(void)achievementAlert {
+    NSLog(@"achievement");
+    UIView *achAlert = [[UIView alloc] initWithFrame:CGRectMake(0, 460, 320, 68)]; //y-max is 480 - 20 because status bar is 20 points and moves origin down.
+    achAlert.backgroundColor = [UIColor greenColor];
+    UILabel *achLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 68)]; //same size as achAlert view so everything will be centered.
+    achLabel.text = @"Achievement Alert";
+    achLabel.textAlignment = NSTextAlignmentCenter;
+    achLabel.backgroundColor = [UIColor clearColor];
+    achLabel.textColor = [UIColor blackColor];
+    [achLabel setFont:[UIFont fontWithName: @"Helvetica" size: 24.0f]];
+    [achAlert addSubview:achLabel];
+    [self.view addSubview:achAlert];
+    [self showAchievementAlertView:achAlert];
+}
+-(void)showAchievementAlertView:(UIView*)achAlert {
+    [UIView animateWithDuration:1
+                          delay:0.05
+                        options:  UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         NSLog(@"%f,%f %f,%f",achAlert.center.x, achAlert.center.y, achAlert.frame.size.width,achAlert.frame.size.height);
+                         achAlert.center = CGPointMake(achAlert.center.x, achAlert.center.y - achAlert.frame.size.height );
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Animation Complete!");
+                         [self hideAchievementAlertView:achAlert];
+                     }];
+}
+
+-(void)hideAchievementAlertView:(UIView*)achAlert {
+    [UIView animateWithDuration:1
+                          delay:5.0
+                        options:  UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         NSLog(@"%f,%f %f,%f",achAlert.center.x, achAlert.center.y, achAlert.frame.size.width,achAlert.frame.size.height);
+
+                         achAlert.center = CGPointMake(achAlert.center.x, achAlert.center.y + achAlert.frame.size.height );
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Animation Complete!");
+                         [self removeAchievementAlertView:achAlert];
+                     }];
+}
+
+- (void)removeAchievementAlertView:(UIView*)achAlert
+{
+    [achAlert removeFromSuperview];
+}
+#pragma mark Events
+-(void)workoutDone {
+    NSTimer *myTimer = [NSTimer timerWithTimeInterval:2.5 target:self selector:@selector(loadSummaryView) userInfo:nil repeats:NO];
+    [[NSRunLoop mainRunLoop] addTimer:myTimer forMode:NSDefaultRunLoopMode];
+}
+-(void)loadSummaryView {
+    UIView *summaryView = [[UIView alloc] initWithFrame:CGRectMake(0, 460, 320, 460)]; //y-max is 480 - 20 because status bar is 20 points and moves origin down.
+    summaryView.backgroundColor = [UIColor grayColor];
+    summaryView.tag = 1; //use to get
+    UILabel *summaryLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 30, 260, 40)]; //same size as achAlert view so everything will be centered.
+    summaryLabel.text = @"Summary View";
+    summaryLabel.textAlignment = NSTextAlignmentCenter;
+    summaryLabel.backgroundColor = [UIColor clearColor];
+    summaryLabel.textColor = [UIColor blackColor];
+    [summaryLabel setFont:[UIFont fontWithName: @"Helvetica" size: 24.0f]];
+    [summaryView addSubview:summaryLabel];
+    UIButton *summaryButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    summaryButton.backgroundColor = [UIColor whiteColor];
+    summaryButton.frame = CGRectMake(80, 300, 160, 44);
+    [summaryButton setTitle:@"Close" forState:UIControlStateNormal];
+    summaryButton.titleLabel.textColor = [UIColor blueColor];
+    summaryButton.titleLabel.center = summaryButton.center;
+    [summaryButton.titleLabel setFont:[UIFont fontWithName: @"Helvetica" size: 12.0f]];
+
+    [summaryButton addTarget:self action:@selector(hideSummaryView:) forControlEvents:UIControlEventTouchUpInside];
+    [summaryView addSubview:summaryButton];
+    [self.view addSubview:summaryView];
+    
+    [self showSummaryView:summaryView];
+}
+-(void)showSummaryView:(UIView*)myView {
+    [UIView animateWithDuration:1
+                          delay:0.05
+                        options:  UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         myView.center = CGPointMake(myView.center.x, myView.center.y - myView.frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Animation Complete!");
+                     }];
+}
+
+-(void)hideSummaryView:(UIView*)myView {
+    myView = myView.superview;
+    [UIView animateWithDuration:1
+                          delay:1.0
+                        options:  UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         myView.center = CGPointMake(myView.center.x, myView.center.y + myView.frame.size.height);
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Animation Complete!");
+                         [self removeAchievementAlertView:myView];
+                     }];
 }
 
 #pragma mark Actions
 - (IBAction)goButtonPressed:(id)sender {
     
+    self.workoutHasBegun = YES;
     //set state: flips between button states
     UIButton *button = (UIButton*)sender;
     button.selected = !button.selected;
@@ -124,26 +230,24 @@
                                                              userInfo:nil
                                                               repeats:YES];
         
-        
     } else if (!button.selected) {
-        
+    
         self.elapsedTime += [[NSDate date] timeIntervalSinceDate:self.startDate];
         [self.stopWatchTimer invalidate];
         self.stopWatchTimer = nil;
-        //[self updateTimer];
-        
-        
     }
 }
 
 - (IBAction)swipeGesture:(id)sender {
-    NSLog(@"Swipe.");
-    if (d.cardsRemaining > 0) {
-        [self.d draw];
-        [self updateTopCard];
-    } else if (d.cardsRemaining <= 0) {
-        self.cardSuitLabel.text = @"Done.";
-        [self.stopWatchTimer invalidate];
+    if (self.workoutHasBegun) {
+        if (d.cardsRemaining > 0) {
+            [self.d draw];
+            [self updateTopCard];
+        } else if (d.cardsRemaining <= 0) {
+            self.cardSuitLabel.text = @"Done.";
+            [self.stopWatchTimer invalidate];
+            [self workoutDone];
+        }
     }
 }
 
