@@ -9,11 +9,13 @@
 #import <Parse/Parse.h>
 @class Card;
 @class Workout;
+@class Exercise;
 
 @interface WorkoutCard : PFObject<PFSubclassing>
 
 @property (retain) Workout *workout;
 @property (retain) Card *card;
+@property (retain) Exercise *exercise;
 @property Boolean isComplete;
 
 + (NSString *)parseClassName;

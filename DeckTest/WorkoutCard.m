@@ -13,6 +13,7 @@
 
 @dynamic workout;
 @dynamic card;
+@dynamic exercise;
 @dynamic isComplete;
 
 + (NSString *)parseClassName {

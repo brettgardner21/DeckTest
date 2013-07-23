@@ -18,6 +18,6 @@
 @property NSTimeInterval duration;
 
 + (NSString *)parseClassName;
-
+- (NSMutableArray *) getWorkoutCards;
 @end
 

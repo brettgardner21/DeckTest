@@ -24,6 +24,9 @@
 		EA34114616ECDB0A00AE1196 /* DeckTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA34114516ECDB0A00AE1196 /* DeckTestViewController.m */; };
 		EA406807173038AB0084BC4E /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = EA406806173038AB0084BC4E /* Exercise.m */; };
 		EA40680A1730463C0084BC4E /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4068091730463C0084BC4E /* Card.m */; };
+		EA406BC51781E06400D6451B /* WorkoutRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = EA406BC41781E06400D6451B /* WorkoutRunner.m */; };
+		EA406BC81781E47500D6451B /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = EA406BC71781E47500D6451B /* Timer.m */; };
+		EA41CC60178C79AA008D6E3B /* WorkoutLogController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA41CC5F178C79AA008D6E3B /* WorkoutLogController.m */; };
 		EA46FEB117343C3000E5CCA8 /* NSMutableArray_Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = EA46FEB017343C3000E5CCA8 /* NSMutableArray_Shuffle.m */; };
 		EABBCE1C1738205B00BAA0FD /* WorkoutCard.m in Sources */ = {isa = PBXBuildFile; fileRef = EABBCE1B1738205B00BAA0FD /* WorkoutCard.m */; };
 		EAF98AC417285614008936B7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF98AC317285614008936B7 /* Parse.framework */; };
@@ -68,6 +71,12 @@
 		EA406806173038AB0084BC4E /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		EA4068081730463C0084BC4E /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		EA4068091730463C0084BC4E /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		EA406BC31781E06400D6451B /* WorkoutRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutRunner.h; sourceTree = "<group>"; };
+		EA406BC41781E06400D6451B /* WorkoutRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutRunner.m; sourceTree = "<group>"; };
+		EA406BC61781E47500D6451B /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		EA406BC71781E47500D6451B /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		EA41CC5E178C79AA008D6E3B /* WorkoutLogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutLogController.h; sourceTree = "<group>"; };
+		EA41CC5F178C79AA008D6E3B /* WorkoutLogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutLogController.m; sourceTree = "<group>"; };
 		EA46FEAF17343C3000E5CCA8 /* NSMutableArray_Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSMutableArray_Shuffle.h; sourceTree = "<group>"; };
 		EA46FEB017343C3000E5CCA8 /* NSMutableArray_Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSMutableArray_Shuffle.m; sourceTree = "<group>"; };
 		EABBCE1A1738205B00BAA0FD /* WorkoutCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutCard.h; sourceTree = "<group>"; };
@@ -164,6 +173,8 @@
 				3F26D6CB176666EA00215930 /* OfflineDeckTestViewController.m */,
 				EA34114416ECDB0A00AE1196 /* DeckTestViewController.h */,
 				EA34114516ECDB0A00AE1196 /* DeckTestViewController.m */,
+				EA41CC5E178C79AA008D6E3B /* WorkoutLogController.h */,
+				EA41CC5F178C79AA008D6E3B /* WorkoutLogController.m */,
 				EA34113016ECDB0A00AE1196 /* Supporting Files */,
 			);
 			path = DeckTest;
@@ -199,6 +210,10 @@
 				EA46FEB017343C3000E5CCA8 /* NSMutableArray_Shuffle.m */,
 				EABBCE1A1738205B00BAA0FD /* WorkoutCard.h */,
 				EABBCE1B1738205B00BAA0FD /* WorkoutCard.m */,
+				EA406BC31781E06400D6451B /* WorkoutRunner.h */,
+				EA406BC41781E06400D6451B /* WorkoutRunner.m */,
+				EA406BC61781E47500D6451B /* Timer.h */,
+				EA406BC71781E47500D6451B /* Timer.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,6 +298,9 @@
 				3F26D6CC176666EA00215930 /* OfflineDeckTestViewController.m in Sources */,
 				3F26D6CF17666E4E00215930 /* HelpViewController.m in Sources */,
 				3F26D6D217666E5E00215930 /* SettingsViewController.m in Sources */,
+				EA406BC51781E06400D6451B /* WorkoutRunner.m in Sources */,
+				EA406BC81781E47500D6451B /* Timer.m in Sources */,
+				EA41CC60178C79AA008D6E3B /* WorkoutLogController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 #import "Deck.h"
 #import "Exercise.h"
 #import "Card.h"
+#import "WorkoutCard.h"
 #import "NSMutableArray_Shuffle.h"
 
 @interface DeckTestViewController ()
@@ -20,6 +21,8 @@
 @property (strong, nonatomic) NSDate *startDate; // Stores the date of the click on the start button
 @property NSTimeInterval elapsedTime; //Elapsed Time
 @property Deck *testDeck;
+@property Workout *workout;
+@property NSMutableArray *workoutCards;
 
 @end
 
@@ -42,29 +45,9 @@
             Deck *firstDeck = [objects objectAtIndex:0];
             self.deckLabel.text = firstDeck.name;
             
-            
-            NSMutableArray *cards = [firstDeck getCards];
-            [cards shuffle];
-            for (Card *card in cards){
-                [self addCard:card];
-            }
-            
             _testDeck = firstDeck;
             
-            //get all cards for the test deck
-//            PFQuery *query2 = [PFQuery queryWithClassName:@"Card"];
-//            
-//            // Follow relationship
-//            [query2 whereKey:@"deck" equalTo:firstDeck];
-//            [query2 includeKey:@"exercise"];
-//            
-//            [query2 findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//                if (!error) {
-//                    NSMutableArray *cards = [(NSArray *)objects mutableCopy];
-//
-//                    
-//                }
-//            }];
+
         }
     }];
     
@@ -75,10 +58,55 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
+- (void) startWorkout
+{
+    
+    //Let's Test adding a Workout with a Deck and workout cards
+    
+    //Generate the workout
+    self.workout = [[Workout alloc] init];
+    self.workout.deck = _testDeck;
+    self.workout.duration = _elapsedTime;
+    
+    
+    //Grab all of the cards for the workout from the deck and shuffle them
+    NSMutableArray *cards = [_testDeck getCards];
+    [cards shuffle];
+    
+    //init WorkoutCards
+    self.workoutCards = [[NSMutableArray alloc]init];
+    
+    //Generate Workout Cards
+    for (Card *card in cards){
+        WorkoutCard *workoutCard = [[WorkoutCard alloc] init];
+        workoutCard.card = card;
+        workoutCard.workout = self.workout;
+        workoutCard.exercise = card.exercise;
+        [self.workoutCards addObject:workoutCard];
+        [self addCard:card];
+    }
+    
+
+    
+    //Save the new workout
+    [self.workout saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            self.timerLabel.text = @"Saved";
+            
+            [PFObject saveAll:self.workoutCards];//Need to add error handling, but this seems to work 
+            
+        }
+    }];
+    
+
+    
+}
+
 - (void)addCard:(Card *)card
 {
     //Make a frame for view to be loaded in
-    CGRect frame = CGRectMake(0, 0, 240, 340);
+    CGRect frame = CGRectMake(0, 0, 240, 300);
     //Initialize subview
     subView = [[UIView alloc] initWithFrame:frame];
     
@@ -130,7 +158,7 @@
 - (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer {
     
     //Constants
-    float slideLength = .25; //less than duration due to friction.  will go half as far with no friction
+    float slideLength = .20; //less than duration due to friction.  will go half as far with no friction
     CGPoint center = self.view.center;
     float startX = center.x;
     float startY = center.y;
@@ -219,6 +247,8 @@
     self.startButton.enabled = false;
     [self.startButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
     
+    [self startWorkout];
+    
 }
 
 - (IBAction)onStopPressed:(id)sender {
@@ -240,19 +270,6 @@
     //Enable the start button
     self.startButton.enabled = true;
     
-    //Let's Test adding a Workout with a Deck.  T
-    Workout *workout = [[Workout alloc] init];
-    workout.deck = _testDeck;
-    workout.duration = _elapsedTime;
-
-    //Save the new post
-    [workout saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            self.timerLabel.text = @"Saved";
-        }
-    }];
-    
-
     //Reset elapsedTime
     self.elapsedTime = 0;
     
