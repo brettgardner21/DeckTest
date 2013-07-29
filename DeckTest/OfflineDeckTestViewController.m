@@ -39,10 +39,14 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [UIApplication sharedApplication].idleTimerDisabled = NO;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     self.workoutHasBegun = NO;
     
     //setup

@@ -13,6 +13,10 @@
 		3F26D6D81766721200215930 /* card.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F26D6D71766721200215930 /* card.png */; };
 		3F3EE0FB1794D36800A2D55B /* Design.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE0FA1794D36800A2D55B /* Design.rtf */; };
 		3F3EE1001794E4EB00A2D55B /* TestSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EE0FF1794E4EB00A2D55B /* TestSelectionViewController.m */; };
+		3F3EE10317957A1E00A2D55B /* oliveStarAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE10117957A1E00A2D55B /* oliveStarAppIcon.png */; };
+		3F3EE10417957A1E00A2D55B /* oliveStarAppIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE10217957A1E00A2D55B /* oliveStarAppIconRetina.png */; };
+		3F3EE10617957A3B00A2D55B /* oliveStarAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE10517957A3B00A2D55B /* oliveStarAppIcon.png */; };
+		3F3EE10817957A4100A2D55B /* oliveStarAppIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE10717957A4100A2D55B /* oliveStarAppIconRetina.png */; };
 		EA34112A16ECDB0A00AE1196 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112916ECDB0A00AE1196 /* UIKit.framework */; };
 		EA34112C16ECDB0A00AE1196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112B16ECDB0A00AE1196 /* Foundation.framework */; };
 		EA34112E16ECDB0A00AE1196 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112D16ECDB0A00AE1196 /* CoreGraphics.framework */; };
@@ -53,6 +57,10 @@
 		3F3EE0FA1794D36800A2D55B /* Design.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Design.rtf; sourceTree = "<group>"; };
 		3F3EE0FE1794E4EB00A2D55B /* TestSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestSelectionViewController.h; sourceTree = "<group>"; };
 		3F3EE0FF1794E4EB00A2D55B /* TestSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestSelectionViewController.m; sourceTree = "<group>"; };
+		3F3EE10117957A1E00A2D55B /* oliveStarAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oliveStarAppIcon.png; sourceTree = "<group>"; };
+		3F3EE10217957A1E00A2D55B /* oliveStarAppIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oliveStarAppIconRetina.png; sourceTree = "<group>"; };
+		3F3EE10517957A3B00A2D55B /* oliveStarAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oliveStarAppIcon.png; sourceTree = "<group>"; };
+		3F3EE10717957A4100A2D55B /* oliveStarAppIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oliveStarAppIconRetina.png; sourceTree = "<group>"; };
 		EA34112516ECDB0A00AE1196 /* DeckTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA34112916ECDB0A00AE1196 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EA34112B16ECDB0A00AE1196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +154,8 @@
 		EA34111A16ECDB0A00AE1196 = {
 			isa = PBXGroup;
 			children = (
+				3F3EE10717957A4100A2D55B /* oliveStarAppIconRetina.png */,
+				3F3EE10517957A3B00A2D55B /* oliveStarAppIcon.png */,
 				EA34112F16ECDB0A00AE1196 /* DeckTest */,
 				EA34112816ECDB0A00AE1196 /* Frameworks */,
 				EA34112616ECDB0A00AE1196 /* Products */,
@@ -196,6 +206,8 @@
 		EA34113016ECDB0A00AE1196 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F3EE10117957A1E00A2D55B /* oliveStarAppIcon.png */,
+				3F3EE10217957A1E00A2D55B /* oliveStarAppIconRetina.png */,
 				3F26D6D71766721200215930 /* card.png */,
 				EA34113116ECDB0A00AE1196 /* DeckTest-Info.plist */,
 				EA34113216ECDB0A00AE1196 /* InfoPlist.strings */,
@@ -286,6 +298,10 @@
 				EA34114316ECDB0A00AE1196 /* MainStoryboard.storyboard in Resources */,
 				3F26D6D81766721200215930 /* card.png in Resources */,
 				3F3EE0FB1794D36800A2D55B /* Design.rtf in Resources */,
+				3F3EE10317957A1E00A2D55B /* oliveStarAppIcon.png in Resources */,
+				3F3EE10417957A1E00A2D55B /* oliveStarAppIconRetina.png in Resources */,
+				3F3EE10617957A3B00A2D55B /* oliveStarAppIcon.png in Resources */,
+				3F3EE10817957A4100A2D55B /* oliveStarAppIconRetina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
