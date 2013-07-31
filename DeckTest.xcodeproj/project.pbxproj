@@ -17,6 +17,7 @@
 		3F3EE10417957A1E00A2D55B /* oliveStarAppIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE10217957A1E00A2D55B /* oliveStarAppIconRetina.png */; };
 		3F3EE10617957A3B00A2D55B /* oliveStarAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE10517957A3B00A2D55B /* oliveStarAppIcon.png */; };
 		3F3EE10817957A4100A2D55B /* oliveStarAppIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F3EE10717957A4100A2D55B /* oliveStarAppIconRetina.png */; };
+		3F8B534A17A80598001A81EA /* LB1Deck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F8B534917A80598001A81EA /* LB1Deck.plist */; };
 		EA34112A16ECDB0A00AE1196 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112916ECDB0A00AE1196 /* UIKit.framework */; };
 		EA34112C16ECDB0A00AE1196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112B16ECDB0A00AE1196 /* Foundation.framework */; };
 		EA34112E16ECDB0A00AE1196 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA34112D16ECDB0A00AE1196 /* CoreGraphics.framework */; };
@@ -61,6 +62,7 @@
 		3F3EE10217957A1E00A2D55B /* oliveStarAppIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oliveStarAppIconRetina.png; sourceTree = "<group>"; };
 		3F3EE10517957A3B00A2D55B /* oliveStarAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oliveStarAppIcon.png; sourceTree = "<group>"; };
 		3F3EE10717957A4100A2D55B /* oliveStarAppIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oliveStarAppIconRetina.png; sourceTree = "<group>"; };
+		3F8B534917A80598001A81EA /* LB1Deck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LB1Deck.plist; sourceTree = "<group>"; };
 		EA34112516ECDB0A00AE1196 /* DeckTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA34112916ECDB0A00AE1196 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EA34112B16ECDB0A00AE1196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -199,6 +201,7 @@
 				EAF98AD7172859DE008936B7 /* Models */,
 				3F3EE0FD1794D89700A2D55B /* ViewControllers */,
 				EA34113016ECDB0A00AE1196 /* Supporting Files */,
+				3F8B534917A80598001A81EA /* LB1Deck.plist */,
 			);
 			path = DeckTest;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				3F3EE10417957A1E00A2D55B /* oliveStarAppIconRetina.png in Resources */,
 				3F3EE10617957A3B00A2D55B /* oliveStarAppIcon.png in Resources */,
 				3F3EE10817957A4100A2D55B /* oliveStarAppIconRetina.png in Resources */,
+				3F8B534A17A80598001A81EA /* LB1Deck.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

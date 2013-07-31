@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Clubs</key>
+	<dict>
+		<key>1</key>
+		<string>4 COUNT CHERRY PICKERS</string>
+		<key>2</key>
+		<string>4 COUNT WINDMILLS</string>
+		<key>3</key>
+		<string>4 COUNT WINDMILLS</string>
+		<key>4</key>
+		<string>4 COUNT CHERRY PICKERS</string>
+		<key>5</key>
+		<string>4 COUNT SIDE STRADDLE HOPS</string>
+		<key>6</key>
+		<string>4 COUNT CHERRY PICKERS</string>
+		<key>7</key>
+		<string>4 COUNT WINDMILLS</string>
+		<key>8</key>
+		<string>4 COUNT SIDE STRADDLE HOPS</string>
+		<key>9</key>
+		<string>4 COUNT CHERRY PICKERS</string>
+		<key>10</key>
+		<string>4 COUNT WINDMILLS</string>
+		<key>11</key>
+		<string>4 COUNT CHERRY PICKERS</string>
+		<key>12</key>
+		<string>4 COUNT SIDE STRADDLE HOPS</string>
+		<key>13</key>
+		<string>4 COUNT WINDMILLS</string>
+	</dict>
+	<key>Hearts</key>
+	<dict>
+		<key>1</key>
+		<string>10 SEC LEFT OVER RIGHT</string>
+		<key>2</key>
+		<string>10 SEC CALF STRETCH</string>
+		<key>3</key>
+		<string>10 SEC QUAD STRETCH</string>
+		<key>4</key>
+		<string>10 SEC LEFT OVER RIGHT</string>
+		<key>5</key>
+		<string>10 SEC CALF STRETCH</string>
+		<key>6</key>
+		<string>10 SEC HAMSTRING STRETCH</string>
+		<key>7</key>
+		<string>10 SEC HAMSTRING STRETCH</string>
+		<key>8</key>
+		<string>10 SEC HAMSTRING STRETCH</string>
+		<key>9</key>
+		<string>10 SEC BUTTERFLY STRETCH</string>
+		<key>10</key>
+		<string>10 SEC CALF STRETCH</string>
+		<key>11</key>
+		<string>10 SEC LEFT OVER RIGHT</string>
+		<key>12</key>
+		<string>10 SEC HAMSTRING STRETCH</string>
+		<key>13</key>
+		<string>10 SEC HAMSTRING STRETCH</string>
+	</dict>
+	<key>Spades</key>
+	<dict>
+		<key>1</key>
+		<string>4 COUNT LUNGES</string>
+		<key>2</key>
+		<string>4 COUNT BOOT BEATERS</string>
+		<key>3</key>
+		<string>4 COUNT LUNGES</string>
+		<key>4</key>
+		<string>4 COUNT BOOT BEATERS</string>
+		<key>5</key>
+		<string>4 COUNT MOUNTAIN CLIMBERS</string>
+		<key>6</key>
+		<string>4 COUNT LUNGES</string>
+		<key>7</key>
+		<string>4 COUNT BOOT BEATERS</string>
+		<key>8</key>
+		<string>4 COUNT MOUNTAIN CLIMBERS</string>
+		<key>9</key>
+		<string>4 COUNT BOOT BEATERS</string>
+		<key>10</key>
+		<string>4 COUNT MOUNTAIN CLIMBERS</string>
+		<key>11</key>
+		<string>4 COUNT LUNGES</string>
+		<key>12</key>
+		<string>4 COUNT BOOT BEATERS</string>
+		<key>13</key>
+		<string>4 COUNT BOOT BEATERS</string>
+	</dict>
+	<key>Diamonds</key>
+	<dict>
+		<key>1</key>
+		<string>4 COUNT CRUNCHES</string>
+		<key>2</key>
+		<string>4 COUNT FLUTTER KICKS</string>
+		<key>3</key>
+		<string>4 COUNT HELLO DOLLIES</string>
+		<key>4</key>
+		<string>4 COUNT BICYCLES</string>
+		<key>5</key>
+		<string>4 COUNT CRUNCHES</string>
+		<key>6</key>
+		<string>4 COUNT FLUTTER KICKS</string>
+		<key>7</key>
+		<string>4 COUNT HELLO DOLLIES</string>
+		<key>8</key>
+		<string>4 COUNT BICYCLES</string>
+		<key>9</key>
+		<string>4 COUNT CRUNCHES</string>
+		<key>10</key>
+		<string>4 COUNT FLUTTER KICKS</string>
+		<key>11</key>
+		<string>4 COUNT BICYCLES</string>
+		<key>12</key>
+		<string>4 COUNT FLUTTER KICKS</string>
+		<key>13</key>
+		<string>4 COUNT CRUNCHES</string>
+	</dict>
+	<key>Jokers</key>
+	<dict>
+		<key>1</key>
+		<string>10 8 COUNT BODY BUILDERS</string>
+		<key>2</key>
+		<string>10 8 COUNT BODY BUILDERS</string>
+	</dict>
+</dict>
+</plist>

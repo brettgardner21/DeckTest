@@ -37,12 +37,13 @@
 - (id) init {
 	if(self = [super init]) {
 		nicksCards = [[NSMutableArray alloc] init];
-		for(int i = 0; i <= 3; i++) {
-			for(int value = 1; value <= 13; value++) {
+		for(int i = 0; i <= 3; i++) { //suit - how to add Jokers?
+			for(int value = 1; value <= 13; value++) { //rank
 				Card *card = [[Card alloc] initWithValue:value suit:i];
 				[nicksCards addObject:card];
 			}
 		}
+        
 	}
 	return self;
 }

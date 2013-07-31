@@ -12,5 +12,6 @@
 @interface DeckTestAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong) NSMutableDictionary *currentDeckDictionary;
 
 @end

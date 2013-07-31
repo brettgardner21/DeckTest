@@ -151,7 +151,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Get Ready!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAn-Xs-x0t">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Get Ready!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="PAn-Xs-x0t">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="pgc-aZ-yES"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -180,28 +183,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="PAn-Xs-x0t" firstAttribute="leading" secondItem="QWD-aj-zmS" secondAttribute="leading" constant="96" id="0zc-li-Hc1"/>
+                            <constraint firstItem="muX-dK-4el" firstAttribute="centerY" secondItem="COM-CF-fSX" secondAttribute="centerY" type="default" id="0eA-Vh-sAj"/>
                             <constraint firstItem="8W8-V8-r8r" firstAttribute="bottom" secondItem="QWD-aj-zmS" secondAttribute="bottom" type="default" id="5be-8v-won"/>
                             <constraint firstItem="0SO-c8-cTI" firstAttribute="baseline" secondItem="g4R-oM-ZFx" secondAttribute="baseline" type="default" id="FdT-LZ-GMg"/>
+                            <constraint firstItem="uIB-vo-qf7" firstAttribute="top" secondItem="g4R-oM-ZFx" secondAttribute="top" type="default" id="Il2-P9-b53"/>
                             <constraint firstItem="EkR-yE-Sur" firstAttribute="centerX" secondItem="8W8-V8-r8r" secondAttribute="centerX" type="default" id="LmD-5o-Mqq"/>
                             <constraint firstItem="EkR-yE-Sur" firstAttribute="centerX" secondItem="muX-dK-4el" secondAttribute="centerX" type="default" id="MHI-sQ-tgO"/>
                             <constraint firstItem="uIB-vo-qf7" firstAttribute="leading" secondItem="QWD-aj-zmS" secondAttribute="leading" constant="9" id="MIC-aY-19c"/>
                             <constraint firstItem="0SO-c8-cTI" firstAttribute="baseline" secondItem="uIB-vo-qf7" secondAttribute="baseline" type="default" id="MtN-hY-q59"/>
                             <constraint firstItem="muX-dK-4el" firstAttribute="top" secondItem="0SO-c8-cTI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Y07-vM-32b"/>
                             <constraint firstItem="muX-dK-4el" firstAttribute="top" secondItem="g4R-oM-ZFx" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Y1I-bT-TKW"/>
-                            <constraint firstAttribute="trailing" secondItem="g4R-oM-ZFx" secondAttribute="trailing" constant="8" id="bBY-nf-RFN"/>
                             <constraint firstItem="0SO-c8-cTI" firstAttribute="centerY" secondItem="uIB-vo-qf7" secondAttribute="centerY" type="default" id="bJs-jf-WM1"/>
                             <constraint firstItem="8W8-V8-r8r" firstAttribute="top" secondItem="EkR-yE-Sur" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bbY-L5-zOh"/>
+                            <constraint firstItem="uIB-vo-qf7" firstAttribute="top" secondItem="QWD-aj-zmS" secondAttribute="top" constant="-1" id="cWu-25-69g"/>
                             <constraint firstItem="COM-CF-fSX" firstAttribute="baseline" secondItem="g4R-oM-ZFx" secondAttribute="baseline" type="default" id="g01-8F-OId"/>
                             <constraint firstItem="0SO-c8-cTI" firstAttribute="leading" secondItem="QWD-aj-zmS" secondAttribute="leading" constant="54" id="g7x-Fi-A4z"/>
+                            <constraint firstItem="g4R-oM-ZFx" firstAttribute="leading" secondItem="QWD-aj-zmS" secondAttribute="leading" constant="268" id="gqf-TA-Vuu"/>
                             <constraint firstItem="muX-dK-4el" firstAttribute="leading" secondItem="QWD-aj-zmS" secondAttribute="leading" type="default" id="imd-hO-9Ez"/>
-                            <constraint firstItem="COM-CF-fSX" firstAttribute="top" secondItem="QWD-aj-zmS" secondAttribute="top" constant="44" id="lVp-n8-JpI"/>
+                            <constraint firstItem="PAn-Xs-x0t" firstAttribute="leading" secondItem="QWD-aj-zmS" secondAttribute="leading" constant="67" id="jl0-P4-ujk"/>
                             <constraint firstItem="muX-dK-4el" firstAttribute="trailing" secondItem="QWD-aj-zmS" secondAttribute="trailing" type="default" id="lm9-ax-UT0"/>
                             <constraint firstItem="HRG-A6-rSC" firstAttribute="trailing" secondItem="8W8-V8-r8r" secondAttribute="trailing" type="default" id="mgT-xm-YCQ"/>
                             <constraint firstItem="COM-CF-fSX" firstAttribute="centerX" secondItem="muX-dK-4el" secondAttribute="centerX" type="default" id="nb8-f8-2ec"/>
-                            <constraint firstItem="PAn-Xs-x0t" firstAttribute="top" secondItem="QWD-aj-zmS" secondAttribute="top" constant="173" id="o8y-IP-Ybe"/>
-                            <constraint firstItem="g4R-oM-ZFx" firstAttribute="top" secondItem="QWD-aj-zmS" secondAttribute="top" type="default" id="tPJ-uC-pLv"/>
-                            <constraint firstItem="uIB-vo-qf7" firstAttribute="top" secondItem="QWD-aj-zmS" secondAttribute="top" type="default" id="xDS-0c-lQs"/>
+                            <constraint firstItem="PAn-Xs-x0t" firstAttribute="top" secondItem="QWD-aj-zmS" secondAttribute="top" constant="130" id="zbf-We-esl"/>
                             <constraint firstItem="muX-dK-4el" firstAttribute="top" secondItem="HRG-A6-rSC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="zc4-hs-A6A"/>
                         </constraints>
                     </view>
@@ -697,6 +700,58 @@
     <resources>
         <image name="card.png" width="252" height="384"/>
     </resources>
+    <classes>
+        <class className="DeckTestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeckTestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handlePan:" candidateClass="UIPanGestureRecognizer"/>
+                <relationship kind="action" name="onResetPressed:"/>
+                <relationship kind="action" name="onStartPressed:"/>
+                <relationship kind="action" name="onStopPressed:"/>
+                <relationship kind="outlet" name="deckLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="onResetPressed" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HelpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HelpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OfflineDeckTestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OfflineDeckTestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="goButtonPressed:"/>
+                <relationship kind="action" name="swipeGesture:"/>
+                <relationship kind="outlet" name="cardImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="cardSuitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="goButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timerLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="TestSelectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TestSelectionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unwindFromSegue:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

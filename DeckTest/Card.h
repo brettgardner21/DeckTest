@@ -41,6 +41,7 @@ Suit cardSuit;
 
 @property (retain) NSString *suit;
 @property (retain) NSString *faceValue;
+@property (retain) NSString *exerciseString; 
 @property int reps;
 @property (retain) Deck *deck;
 @property (retain) Exercise *exercise;

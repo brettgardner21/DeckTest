@@ -9,6 +9,7 @@
 #import "OfflineDeckTestViewController.h"
 #import "Workout.h"
 #import "Deck.h"
+#import "DeckTestAppDelegate.h"
 
 @interface OfflineDeckTestViewController ()
 
@@ -28,7 +29,7 @@
 @synthesize d;
 @synthesize currentProgress, cardCount;
 
-#pragma mark Init
+#pragma mark - Init
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -49,6 +50,8 @@
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     self.workoutHasBegun = NO;
     
+    [self deckDictionarySetup];
+    
     //setup
     //generate workout based on Deck selection. We can use segues for this.
     //How should the workout persist? Save the workout object to disk here.
@@ -57,7 +60,6 @@
 
     self.d = [[Deck alloc] init];
 	[d shuffle];
-	NSLog(@"%@",d);
     
     self.currentProgress = 0;
     self.progressBar.progress = 0;
@@ -70,6 +72,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)deckDictionarySetup
+{
+    DeckTestAppDelegate *appDel = (DeckTestAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"LB1Deck.plist"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //Creates the settings plist
+    //Uncomment before release
+    
+    /*if (![fileManager fileExistsAtPath:plistPath]) {
+     NSString *bundle = [[NSBundle mainBundle] pathForResource:@"settings" ofType:@"plist"];
+     [fileManager copyItemAtPath:bundle toPath:plistPath error:&error];
+     
+     } */
+    
+    //overwrites plist with bundle plist.  Remove before sending out.  Use to save settings.
+    NSString *bundle = [[NSBundle mainBundle] pathForResource:@"LB1Deck" ofType:@"plist"];
+    [fileManager removeItemAtPath:plistPath error:&error];
+    [fileManager copyItemAtPath:bundle toPath:plistPath error:&error];
+    appDel.currentDeckDictionary = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+    NSLog(@"%@", appDel.currentDeckDictionary);
+    //put in error handling.
+    
+}
 
 #pragma mark UI Interfacing
 - (void)updateTimer
@@ -160,7 +189,23 @@
     NSTimer *myTimer = [NSTimer timerWithTimeInterval:2.5 target:self selector:@selector(loadSummaryView) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop] addTimer:myTimer forMode:NSDefaultRunLoopMode];
 }
+- (NSString*)updateClock {
+    NSDate *timerDate = [NSDate date];//set timer date as seconds since beginning of time
+    NSTimeInterval newTimeInterval = [timerDate timeIntervalSinceDate:_startDate];
+    NSString *timeString = [self formattedStringForDuration:newTimeInterval];
+    return timeString;
+}
+- (NSString*)formattedStringForDuration:(NSTimeInterval)duration
+{
+    NSInteger minutes = floor(duration/60);
+    NSInteger seconds = round(duration - minutes * 60);
+    return [NSString stringWithFormat:@"%d:%02d", minutes, seconds];
+}
 -(void)loadSummaryView {
+    //total time
+    NSString *totalTimeString = [self updateClock];
+    
+    //view setup
     UIView *summaryView = [[UIView alloc] initWithFrame:CGRectMake(0, 460, 320, 460)]; //y-max is 480 - 20 because status bar is 20 points and moves origin down.
     summaryView.backgroundColor = [UIColor grayColor];
     summaryView.tag = 1; //use to get
@@ -171,6 +216,15 @@
     summaryLabel.textColor = [UIColor blackColor];
     [summaryLabel setFont:[UIFont fontWithName: @"Helvetica" size: 24.0f]];
     [summaryView addSubview:summaryLabel];
+    
+    UILabel *totalTimeLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 80, 260, 40)]; //same size as achAlert view so everything will be centered.
+    totalTimeLabel.text = totalTimeString;
+    totalTimeLabel.textAlignment = NSTextAlignmentCenter;
+    totalTimeLabel.backgroundColor = [UIColor clearColor];
+    totalTimeLabel.textColor = [UIColor blackColor];
+    [totalTimeLabel setFont:[UIFont fontWithName: @"Helvetica" size: 24.0f]];
+    [summaryView addSubview:totalTimeLabel];
+    
     UIButton *summaryButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     summaryButton.backgroundColor = [UIColor whiteColor];
     summaryButton.frame = CGRectMake(80, 300, 160, 44);
