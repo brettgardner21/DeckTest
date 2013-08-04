@@ -40,20 +40,32 @@
 - (id) initWithValue:(NSInteger) aValue suit:(Suit) aSuit {
 	if(self = [super init]) {
 		self.value = aValue;
-		self.cardSuit = aSuit;
+		self.cardSuit = aSuit; //this is a typedef, not a string. Need to change.
         
         // prototype setup:
         //query dictionary using aValue and aSuit to populate card values
-        NSString *keyString = [self suitTypeToString:aSuit];
+       /* NSString *keyString = [self suitTypeToString:aSuit];
         
         DeckTestAppDelegate *appDel = (DeckTestAppDelegate *)[[UIApplication sharedApplication] delegate];
         NSMutableDictionary * deckDictionary = [appDel.currentDeckDictionary objectForKey:keyString];
-        NSArray *dictionaryKeys = [deckDictionary allKeys];
+        
+        NSEnumerator *enumerator = [deckDictionary keyEnumerator];
+        id key;
+        
+        while ((key = [enumerator nextObject])) {
+            /* code that uses the returned key */
+           /* NSString *cardString = [deckDictionary objectForKey:key];
+            self.exerciseString = cardString;
+            NSLog(@"cardstring: %@",self.exerciseString);
+            
+        }
+/*        NSArray *dictionaryKeys = [deckDictionary allKeys];
         for(int i = 0; i < [dictionaryKeys count] ; i++) {
             NSString *indexString = [dictionaryKeys objectAtIndex:i];
             NSString *cardString = [deckDictionary objectForKey:indexString];
             self.exerciseString = cardString;
-        }
+            NSLog(@"cardstring: %@",self.exerciseString);
+        } */
 	}
 	return self;
 }
@@ -82,16 +94,16 @@
 - (NSString *) valueAsString {
 	switch (self.value) {
 		case Ace:
-			return @"A";
+			return @"A(14)";
 			break;
 		case Jack:
-			return @"J";
+			return @"J(11)";
 			break;
 		case Queen:
-			return @"Q";
+			return @"Q(12)";
 			break;
 		case King:
-			return @"K";
+			return @"K(13)";
 			break;
 		default:
 			return [NSString stringWithFormat:@"%d",self.value];

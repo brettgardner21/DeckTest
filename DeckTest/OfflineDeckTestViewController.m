@@ -120,7 +120,6 @@
 
 -(void)updateTopCard {
     self.cardSuitLabel.text = d.currentCard;
-    NSLog(@"%@", d.currentCard);
     
     //advance progress bar and label. reorg this later.
     currentProgress = currentProgress + 1/52.0;
@@ -156,7 +155,7 @@
                           delay:0.05
                         options:  UIViewAnimationOptionAllowAnimatedContent
                      animations:^{
-                         NSLog(@"%f,%f %f,%f",achAlert.center.x, achAlert.center.y, achAlert.frame.size.width,achAlert.frame.size.height);
+                         //NSLog(@"%f,%f %f,%f",achAlert.center.x, achAlert.center.y, achAlert.frame.size.width,achAlert.frame.size.height);
                          achAlert.center = CGPointMake(achAlert.center.x, achAlert.center.y - achAlert.frame.size.height );
                      }
                      completion:^(BOOL finished){
@@ -170,7 +169,7 @@
                           delay:5.0
                         options:  UIViewAnimationOptionAllowAnimatedContent
                      animations:^{
-                         NSLog(@"%f,%f %f,%f",achAlert.center.x, achAlert.center.y, achAlert.frame.size.width,achAlert.frame.size.height);
+                         //NSLog(@"%f,%f %f,%f",achAlert.center.x, achAlert.center.y, achAlert.frame.size.width,achAlert.frame.size.height);
 
                          achAlert.center = CGPointMake(achAlert.center.x, achAlert.center.y + achAlert.frame.size.height );
                      }
@@ -268,16 +267,17 @@
 #pragma mark Actions
 - (IBAction)goButtonPressed:(id)sender {
     
-    self.workoutHasBegun = YES;
     //set state: flips between button states
     UIButton *button = (UIButton*)sender;
     button.selected = !button.selected;
     
     if (button.selected) {
-        NSLog(@"Go.");
-        [self.d draw];
-        [self updateTopCard];
-        
+        if (!self.workoutHasBegun) {
+            self.workoutHasBegun = YES;
+            NSLog(@"Go.");
+            [self.d draw];
+            [self updateTopCard];
+        }
         //start/stop timer
         self.startDate = [NSDate date];
         
@@ -289,7 +289,7 @@
                                                               repeats:YES];
         
     } else if (!button.selected) {
-    
+        
         self.elapsedTime += [[NSDate date] timeIntervalSinceDate:self.startDate];
         [self.stopWatchTimer invalidate];
         self.stopWatchTimer = nil;
